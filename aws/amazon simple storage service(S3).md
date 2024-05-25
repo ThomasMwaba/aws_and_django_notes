@@ -50,13 +50,13 @@
 
 ## AWS S3 configuration
 
-'''
+```
 AWS_ACCESS_KEY_ID = ''
 AWS_SECRET_ACCESS_KEY = ''
 
 AWS_STORAGE_BUCKET_NAME = '' # - Enter your S3 bucket name HERE
 
-'''
+```
 
 ## Django 4.2 > Storage configuration for S3
 

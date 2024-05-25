@@ -7,19 +7,20 @@ allows the developer to only focus on deploying their application by taking care
 ### Configuration
 
 * To Provide integration with Git 
-
-![Example Image](images/awsebcli.png)
-
 Note: it needs to be installed globally 
 
+>>![Example Image](images/awsebcli.png)
 
-![Example Image](images/gunicorn.png)
 
-* Takes care of the communication between Django application and web server.
+* To take care of the communication between Django application and web server.
+
+>>![Example Image](images/gunicorn.png)
+
+
 
 ### Deployment Preparation For Elastic Beanstalk
 
-![Example Image](images/requirements.png)
+>>![Example Image](images/requirements.png)
 
 Creates a requirements.txt file with all the packages and dependencies
 
@@ -27,21 +28,31 @@ Creates a requirements.txt file with all the packages and dependencies
 
 ### Deploying An Application To Elastic Beanstalk
 
->>> 1. Domain/Subdomain name - for example, mydomain.com
-
->>> 2. Record Types - for example , A or AAAA
-
->>> 3. Value - for example , 12.34.56.78
-
->>> 4. Routing Policy - how Route 53 responds to DNS queries
+1. Create a .ebextensions folder in the directory.
 
 
-| Record | Description| Example |
-|----------|----------|----------|
-| A   | Maps a hostname to IPv4  | 192.0.2.1  |
-| AAAA    | Maps a hostname to IPv6  | 2001:0db8:85a3:0:0:8a2e:0370:7334 |
-| CNAME    | Maps a hostname to another hostname   | hostname.example.com  |
-| ALIAS    | Maps a hostname to an AWS Resource   | CloudFront & S3 Buckets |
+2. Which will have a .config file used to communicate between Elastic Beanstalk and the Django application itself.
+
+```
+    option_settings:
+    aws:elasticbeanstalk:container:python:
+    WSGIPath: application_name.wsgi:application
+```
+
+Creates a python container on elasticbeanstalk based on WSGIPATH
+
+3. For the next step make sure you are not in the venv environment.
+
+"ven/Scripts/deactivate"
+
+4. 
+
+
+| Commands | Description|
+|----------|----------|
+| eb init   | creates the application  | 
+| eb create   | creates the environment  | 
+| eb  open  | helps us open the link to the application  |
 
 
  ##### Sources

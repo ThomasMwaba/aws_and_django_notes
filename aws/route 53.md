@@ -1,6 +1,6 @@
 ## Route 53
 
-* is a DNS (Domain Name System) Service
+* Is a DNS (Domain Name System) Service
 
 * DNS is used to help users connect to infrastructure on AWS.
 
@@ -52,7 +52,7 @@ for example, mydomainname.com
 | Simple  | It is commonly used to route traffic to a single resource |
 | Weighted  | It is used to control the percent of requests that go to each specific resource |
 | Latency   | Is used to redirect clients to the resource with the least latency(delay) |
-| Geolocation   | Is different from Laztency. The routing is based on user location( continent, country or state)   |
+| Geolocation   | Is different from Latency. The routing is based on user location( continent, country or state)   |
 
 
 
